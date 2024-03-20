@@ -20,9 +20,9 @@ Após compilar o programa, siga estas etapas para executá-lo:
 2. Execute o seguinte comando: `./lab`.
 
 ## Resultados
-O resultado esperado (multiplicação correta de matrizes) para esta atividade foi alcançado. Para comprovar que nosso código foi compilado e executado no ambiente da AWS, apresentamos a seguinte imagem:
+O resultado esperado (multiplicação correta de matrizes) para esta atividade foi alcançado. Para comprovar que nosso código foi compilado e executado no sistema operacional Linux, apresentamos a seguinte imagem:
 
-![lab 2 CP](https://github.com/R4skex/CompParalela/assets/125515277/a1bcfbfc-fa2d-486e-bff0-d9eeb6390c8e)
+![printzinha lab 2](https://github.com/Cehiim/comp_paralela/assets/125515277/cd583fac-015b-42d3-8af7-5a64b8830c95)
 
 
 
