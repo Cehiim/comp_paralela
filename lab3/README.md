@@ -17,9 +17,9 @@ Tempo de execução serial para 1, 2, 4, 6 e 8 processadores:
 Tempo de execução paralela para 1, 2, 4, 6 e 8 processadores:
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/cb7cd794-fd48-4767-8d2c-2e627f62a4b1)
 
+## Questão 2)
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/1d289b7d-6db9-4fc5-af70-5ac740cec57f)
 
-## Questão 2)
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/c8569724-3c69-47d3-9b3e-c400f1c74181)
 
 ## Questão 3)
