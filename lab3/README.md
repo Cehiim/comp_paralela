@@ -8,10 +8,12 @@
 ## Questão 1)
 Aqui está um gráfico mostrando os tempos de execução sequencial e paralelo para 1, 2, 4, 6 e 8 processadores:
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/939e1323-6a1b-4c7e-831a-a5545e4c4bda)
+
 Tempo de execução serial para 1, 2, 4, 6 e 8 processadores:
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/447923aa-5bd8-4a77-8016-ab2ba32b13b2)
 
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/c5a8a6f7-0f55-4766-a11d-ffc0cde64a5e)
+
 Tempo de execução paralela para 1, 2, 4, 6 e 8 processadores:
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/cb7cd794-fd48-4767-8d2c-2e627f62a4b1)
 
