@@ -19,6 +19,7 @@
 ## Questão 2)
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/c8569724-3c69-47d3-9b3e-c400f1c74181)
 
+##Questão 3)
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/3c0cdeec-4f80-4552-b4a1-2e1d3c2d9928)
 
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/4bfbf9ea-64fe-4287-a54a-dfe04c74f84d)
