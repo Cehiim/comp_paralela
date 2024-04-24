@@ -6,6 +6,7 @@
 - João Victor Dallapé Madeira
 
 ## Questão 1)
+Aqui está um gráfico mostrando os tempos de execução sequencial e paralelo para 1, 2, 4, 6 e 8 processadores:
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/939e1323-6a1b-4c7e-831a-a5545e4c4bda)
 
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/447923aa-5bd8-4a77-8016-ab2ba32b13b2)
