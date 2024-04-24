@@ -25,6 +25,7 @@ Tempo de execução paralela para 1, 2, 4, 6 e 8 processadores:
 
 ## Questão 3)
 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
+Quando introduzimos a diretiva "critical" à nossa solução, o que acontece é que o programa vai usar apenas uma thread por vez para executar uma parte específica do código. Isso ajuda a evitar qualquer confusão que poderia surgir quando várias threads tentam acessar e modificar os mesmos dados ao mesmo tempo.
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/3c0cdeec-4f80-4552-b4a1-2e1d3c2d9928)
 
 ![image](https://github.com/Cehiim/comp_paralela/assets/142693345/4bfbf9ea-64fe-4287-a54a-dfe04c74f84d)
