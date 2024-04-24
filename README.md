@@ -1,2 +1,1 @@
 # comp_paralela
- 
