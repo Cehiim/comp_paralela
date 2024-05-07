@@ -33,6 +33,6 @@ pthread_create(&threads[i], NULL, threadexec, (void*)i);
 for (int i = 0; i < numthreads; i++) {
 pthread_join(threads[i], NULL);
 }
-printf("\n%.70Lf\n", result);
+printf("%.70Lf\n", result);
 return 0;
 }
