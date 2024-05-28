@@ -3,12 +3,12 @@
 #include <pthread.h>
 #include <mpfr.h>
 
-#define N_CASA 1000
+#define N_CASA 100000
 
 mpfr_t result;
-int numdeexec = 8;
+int numdeexec = 1000;
 int numporthread = 0;
-int numthreads = 1;
+int numthreads = 16;
 
 
 void fatorial (int num, mpfr_t resul) {
