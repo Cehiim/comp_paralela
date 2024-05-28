@@ -4,10 +4,10 @@
 #include <mpfr.h> // Biblioteca de cálculo de precisão arbitrária
 
 #define N_CASA 100000
-int numexec = 1000;
-int numthreads = 16;
+int num_exec = 1000;
+int num_threads = 16;
 mpfr_t result;
-int execporthread = numexec/numthreads;
+int execporthread = num_exec/num_threads;
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
@@ -18,38 +18,39 @@ void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial 
 }
 
 void *threadexec(void* args) { // Função de execução para cada thread
-int numthread = (int)args;
-mpfr_t temp, fat, div, um;
-mpfr_init2(temp, N_CASA); // Define a precisão especificada para cada variável (número de casas decimais após o ponto)
-mpfr_init2(fat, N_CASA);
-mpfr_init2(div, N_CASA);
-mpfr_init2(um, N_CASA);
-int aux;
-mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
-mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
-for (int i = 0; i < execporthread; i ++) {
-aux = ((i*numthreads) + numthread);
-fatorial(aux, fat);
-mpfr_div(div, um, fat, MPFR_RNDU);
-mpfr_add(temp, temp, div, MPFR_RNDU);
-}
-mpfr_add(result, result, temp, MPFR_RNDU);
-mpfr_clear(temp);
-mpfr_clear(fat);
-mpfr_clear(div);
-mpfr_clear(um);
-return NULL;
+  int numthread = (int)args;
+  mpfr_t temp, fat, div, um;
+  mpfr_init2(temp, N_CASA); // Define a precisão especificada para cada variável (número de casas decimais após o ponto)
+  mpfr_init2(fat, N_CASA);
+  mpfr_init2(div, N_CASA);
+  mpfr_init2(um, N_CASA);
+  int aux;
+  mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
+  mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
+    
+  for (int i = 0; i < execporthread; i ++) {
+    aux = ((i*num_threads) + numthread);
+    fatorial(aux, fat);
+    mpfr_div(div, um, fat, MPFR_RNDU);
+    mpfr_add(temp, temp, div, MPFR_RNDU);
+  }
+  mpfr_add(result, result, temp, MPFR_RNDU);
+  mpfr_clear(temp);
+  mpfr_clear(fat);
+  mpfr_clear(div);
+  mpfr_clear(um);
+  return NULL;
 }
 
 int main() {
-pthread_t threads[numthreads];
+pthread_t threads[num_threads];
 mpfr_init2(result, N_CASA);
 mpfr_set_d(result, 0.0, MPFR_RNDU);
   
-for (int i = 0; i < numthreads; i++) {
+for (int i = 0; i < num_threads; i++) {
 pthread_create(&threads[i], NULL, threadexec, (void*)i);
 }
-for (int i = 0; i < numthreads; i++) {
+for (int i = 0; i < num_threads; i++) {
 pthread_join(threads[i], NULL);
 }
 mpfr_out_str(stdout, 10, 0, result, MPFR_RNDU);
