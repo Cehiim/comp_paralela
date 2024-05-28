@@ -34,10 +34,10 @@ void *threadexec(void* args) { // Função de execução para cada thread
                                          // "(... + thread_id)" garante que cada thread esteja calculando fatoriais de números diferentes
     fatorial(aux, fat);
     mpfr_div(div, um, fat, MPFR_RNDU); // Atribui a variável "div" o resultado da divisão de 1 pelo número do fatorial
-    mpfr_add(temp, temp, div, MPFR_RNDU);
+    mpfr_add(temp, temp, div, MPFR_RNDU); // Atribui a variável "temp" a soma das divisões "div"
   }
-  mpfr_add(result, result, temp, MPFR_RNDU);
-  mpfr_clear(temp);
+  mpfr_add(result, result, temp, MPFR_RNDU); // Atribui a variável "temp" o resultado das somas das divisões
+  mpfr_clear(temp); // Libera a memória alocada das variáveis
   mpfr_clear(fat);
   mpfr_clear(div);
   mpfr_clear(um);
@@ -45,7 +45,7 @@ void *threadexec(void* args) { // Função de execução para cada thread
 }
 
 int main() {
-pthread_t threads[num_threads];
+pthread_t threads[num_threads]; // Cria um vetor de threads
 mpfr_init2(result, N_CASA);
 mpfr_set_d(result, 0.0, MPFR_RNDU);
 exec_por_thread = num_exec/num_threads;
