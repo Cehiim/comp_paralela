@@ -12,9 +12,9 @@ int numthreads = 16;
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
-  mpfr_set_ui(fat_result, 1.0, MPFR_RNDU); // Configura o valor de "fat_result" para 1.0
+  mpfr_set_ui(fat_result, 1.0, MPFR_RNDU); // Configura o valor de "fat_result" para 1.0, "MPFR_RNDU" é uma constante que indica o modo de arredondamento para cima
   for (int i = 1; i < n+1; i ++){
-    mpfr_mul_ui(fat_result, fat_result, i, MPFR_RNDU); 
+    mpfr_mul_ui(fat_result, fat_result, i, MPFR_RNDU); // Dentro do loop, "fat_result" é multiplicado pelo valor de 'i'
   }
 }
 
