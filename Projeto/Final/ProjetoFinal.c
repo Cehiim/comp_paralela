@@ -48,7 +48,7 @@ int main() {
 pthread_t threads[num_threads];
 mpfr_init2(result, N_CASA);
 mpfr_set_d(result, 0.0, MPFR_RNDU);
-exec_por_thread = num_exec/num_threads
+exec_por_thread = num_exec/num_threads;
   
 for (int i = 0; i < num_threads; i++) {
 pthread_create(&threads[i], NULL, threadexec, (void*)i);
