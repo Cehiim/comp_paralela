@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
-#include <mpfr.h>
+#include <stdio.h> // Biblioteca de input/output
+#include <stdlib.h> // Biblioteca de alocação de memória
+#include <pthread.h> // Biblioteca de manipulação de threads
+#include <mpfr.h> // Biblioteca de cálculo de precisão
 
 #define N_CASA 100000
 
@@ -11,11 +11,11 @@ int numporthread = 0;
 int numthreads = 16;
 
 
-void fatorial (int num, mpfr_t resul) {
-mpfr_set_ui(resul, 1.0, MPFR_RNDU);
-for (int i = 1; i < num+1; i ++){
-mpfr_mul_ui(resul, resul, i, MPFR_RNDU); 
-}
+void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
+  mpfr_set_ui(fat_result, 1.0, MPFR_RNDU); // Configura o valor de "fat_result" para 1.0
+  for (int i = 1; i < n+1; i ++){
+    mpfr_mul_ui(fat_result, fat_result, i, MPFR_RNDU); 
+  }
 }
 
 void *threadexec(void* args) {
