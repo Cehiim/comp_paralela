@@ -12,10 +12,10 @@ int numporthread = 0;
 int numthreads = 1;
 
 
-void fatorial (int num, mpfr_t result) {
-mpfr_set_ui(result, 1.0, MPFR_RNDU);
+void fatorial (int num, mpfr_t resul) {
+mpfr_set_ui(resul, 1.0, MPFR_RNDU);
 for (int i = 1; i < num+1; i ++){
-mpfr_mul_ui(result, result, i, MPFR_RNDU); 
+mpfr_mul_ui(resul, resul, i, MPFR_RNDU); 
 }
 }
 
