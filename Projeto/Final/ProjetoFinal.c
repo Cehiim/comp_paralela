@@ -11,7 +11,8 @@ int exec_por_thread = num_exec/num_threads;
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
-  mpfr_set_ui(fat_result, 1.0, MPFR_RNDU); // Define o valor de "fat_result" para 1.0, "MPFR_RNDU" é uma constante que indica o modo de arredondamento para cima
+  mpfr_set_ui(fat_result, 1.0, MPFR_RNDU); // Define o valor de "fat_result" para 1.0
+                                           // "MPFR_RNDU" é uma constante que indica o modo de arredondamento para cima
   for (int i = 1; i < n+1; i ++){
     mpfr_mul_ui(fat_result, fat_result, i, MPFR_RNDU); // Dentro do loop, "fat_result" é multiplicado pelo valor de 'i'
   }
@@ -28,7 +29,9 @@ void *threadexec(void* args) { // Função de execução para cada thread
   mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
   mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
   for (int i = 0; i < exec_por_thread; i ++) {
-    aux = ((i*num_threads) + thread_id);
+    aux = ((i*num_threads) + thread_id); // Define o número que será calculado como fatorial para iteração
+                                         // "(i*num_threads)" é feito para distribuir o trabalho de cálculo do fatorial entre as threads
+                                         // "(... + thread_id)" garante que cada thread esteja calculando fatoriais de números diferentes
     fatorial(aux, fat);
     mpfr_div(div, um, fat, MPFR_RNDU);
     mpfr_add(temp, temp, div, MPFR_RNDU);
