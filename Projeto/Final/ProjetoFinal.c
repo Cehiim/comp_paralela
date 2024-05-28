@@ -51,10 +51,10 @@ int main() {
   mpfr_set_d(result, 0.0, MPFR_RNDU); // Define o valor de "result" para 0.0
     
   for (int i = 0; i < num_threads; i++) {
-  pthread_create(&threads[i], NULL, threadexec, (void*)i); // Inicia as threads e começa a execução
+    pthread_create(&threads[i], NULL, threadexec, (void*)i); // Inicia as threads e começa a execução
   }
   for (int i = 0; i < num_threads; i++) {
-  pthread_join(threads[i], NULL); // Bloqueia a execução raiz até que todas as execuções em paralelo terminem
+    pthread_join(threads[i], NULL); // Bloqueia a execução raiz até que todas as execuções em paralelo terminem
   }
   mpfr_out_str(stdout, 10, 0, result, MPFR_RNDU); // Imprime o valor de "result" na saída padrão (stdout)
                                                   // '0' indica a saída sem formatação
