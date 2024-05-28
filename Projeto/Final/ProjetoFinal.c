@@ -7,7 +7,7 @@
 int num_exec = 1000;
 int num_threads = 16;
 mpfr_t result;
-int execporthread = num_exec/num_threads;
+int exec_por_thread = num_exec/num_threads;
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
@@ -27,8 +27,7 @@ void *threadexec(void* args) { // Função de execução para cada thread
   int aux;
   mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
   mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
-    
-  for (int i = 0; i < execporthread; i ++) {
+  for (int i = 0; i < exec_por_thread; i ++) {
     aux = ((i*num_threads) + numthread);
     fatorial(aux, fat);
     mpfr_div(div, um, fat, MPFR_RNDU);
