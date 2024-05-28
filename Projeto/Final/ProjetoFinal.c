@@ -7,7 +7,7 @@
 int num_exec = 1000;
 int num_threads = 16;
 mpfr_t result;
-int exec_por_thread = num_exec/num_threads;
+int exec_por_thread = 0;
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
@@ -33,7 +33,7 @@ void *threadexec(void* args) { // Função de execução para cada thread
                                          // "(i*num_threads)" é feito para distribuir o trabalho de cálculo do fatorial entre as threads
                                          // "(... + thread_id)" garante que cada thread esteja calculando fatoriais de números diferentes
     fatorial(aux, fat);
-    mpfr_div(div, um, fat, MPFR_RNDU);
+    mpfr_div(div, um, fat, MPFR_RNDU); // Atribui a variável "div" o resultado da divisão de 1 pelo número do fatorial
     mpfr_add(temp, temp, div, MPFR_RNDU);
   }
   mpfr_add(result, result, temp, MPFR_RNDU);
@@ -48,6 +48,7 @@ int main() {
 pthread_t threads[num_threads];
 mpfr_init2(result, N_CASA);
 mpfr_set_d(result, 0.0, MPFR_RNDU);
+exec_por_thread = num_exec/num_threads
   
 for (int i = 0; i < num_threads; i++) {
 pthread_create(&threads[i], NULL, threadexec, (void*)i);
