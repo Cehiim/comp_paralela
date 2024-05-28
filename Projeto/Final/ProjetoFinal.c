@@ -18,7 +18,7 @@ void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial 
 }
 
 void *threadexec(void* args) { // Função de execução para cada thread
-  int numthread = (int)args;
+  int thread_id = (int)args;
   mpfr_t temp, fat, div, um;
   mpfr_init2(temp, N_CASA); // Define a precisão especificada para cada variável (número de casas decimais após o ponto)
   mpfr_init2(fat, N_CASA);
@@ -28,7 +28,7 @@ void *threadexec(void* args) { // Função de execução para cada thread
   mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
   mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
   for (int i = 0; i < exec_por_thread; i ++) {
-    aux = ((i*num_threads) + numthread);
+    aux = ((i*num_threads) + thread_id);
     fatorial(aux, fat);
     mpfr_div(div, um, fat, MPFR_RNDU);
     mpfr_add(temp, temp, div, MPFR_RNDU);
