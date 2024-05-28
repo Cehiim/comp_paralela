@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <mpfr.h>
-#include <gmp.h>
 
 #define N_CASA 1000
 
