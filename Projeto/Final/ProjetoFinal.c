@@ -4,10 +4,10 @@
 #include <mpfr.h> // Biblioteca de cálculo de precisão arbitrária
 
 #define N_CASA 100000
-int numdeexec = 1000;
+int numexec = 1000;
 int numthreads = 16;
 mpfr_t result;
-int numporthread = numdeexec/numthreads;
+int execporthread = numexec/numthreads;
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
@@ -27,7 +27,7 @@ mpfr_init2(um, N_CASA);
 int aux;
 mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
 mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
-for (int i = 0; i < numporthread; i ++) {
+for (int i = 0; i < execporthread; i ++) {
 aux = ((i*numthreads) + numthread);
 fatorial(aux, fat);
 mpfr_div(div, um, fat, MPFR_RNDU);
