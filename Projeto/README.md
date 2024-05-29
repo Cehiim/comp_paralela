@@ -21,7 +21,7 @@
 
 3- Para executar na versão paralela, é utilizado o mesmo comando, porém com mais threads: `time taskset -c 0-7 ./proj`
 
-4- Para monitorar o tempo de execução de um programa sem interferir no seu funcionamento, usamos o comando time.
+4- Para monitorar o tempo de execução de um programa sem interferir no seu funcionamento, usamos o comando `time`.
 
 5- Além disso, utilizamos o comando `taskset -c 0` para especificar os núcleos da CPU que serão utilizados durante a execução. Esse comando pode ser ajustado conforme necessário, mas para esta atividade, adotamos a seguinte abordagem:
 `./proj`
