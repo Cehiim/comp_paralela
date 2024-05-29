@@ -11,7 +11,7 @@
 
 3- Executando o seguinte comando é possivel compilar a versão paralela: `gcc -o proj ProjetoFinal.c -lpthread -lmpfr`
 
-4- Executando o seguinte comando é possivel compilar a versão critical: `gcc -o proj ProjetoFinal.c -lpthread -lmpfr -lrt`
+4- Executando o seguinte comando é possivel compilar a versão critical: `gcc -o proj Critico.c -lpthread -lmpfr -lrt`
 
 # Como executar o programa
 
