@@ -7,7 +7,7 @@
 int num_exec = 1000; // Número de execuções
 int num_threads = 16; // Número de threads
 mpfr_t result;
-int exec_por_thread = 0;
+int exec_por_thread = 0; // (Definido no "main")
 
 
 void fatorial (int n, mpfr_t fat_result) { // Função para calcular o fatorial de um número 'n'
