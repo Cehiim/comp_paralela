@@ -4,8 +4,8 @@
 #include <mpfr.h> // Biblioteca de cálculo de precisão arbitrária
 
 #define N_CASA 100000
-int num_exec = 1000;
-int num_threads = 16;
+int num_exec = 1000; // Número de execuções
+int num_threads = 16; // Número de threads
 mpfr_t result;
 int exec_por_thread = 0;
 
