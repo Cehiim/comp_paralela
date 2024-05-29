@@ -36,7 +36,7 @@ void *threadexec(void* args) { // Função de execução para cada thread
     mpfr_div(div, um, fat, MPFR_RNDU); // Atribui a variável "div" o resultado da divisão de 1 pelo número do fatorial
     mpfr_add(temp, temp, div, MPFR_RNDU); // Atribui a variável "temp" a soma das divisões "div"
   }
-  mpfr_add(result, result, temp, MPFR_RNDU); // Atribui a variável "temp" o resultado das somas das divisões
+  mpfr_add(result, result, temp, MPFR_RNDU); // Atribui a variável "result" o resultado das somas das divisões
   mpfr_clear(temp); // Libera a memória alocada das variáveis
   mpfr_clear(fat);
   mpfr_clear(div);
