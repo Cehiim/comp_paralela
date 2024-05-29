@@ -24,9 +24,7 @@
 4- Para monitorar o tempo de execução de um programa sem interferir no seu funcionamento, usamos o comando `time`.
 
 5- Além disso, utilizamos o comando `taskset -c 0` para especificar os núcleos da CPU que serão utilizados durante a execução. Esse comando pode ser ajustado conforme necessário, mas para esta atividade, adotamos a seguinte abordagem:
-`./proj`
 
-# Como comprovar que os resultados propostos foram alcançados
 
 # Resultados
 
@@ -52,6 +50,8 @@ Considere o problema da tartaruga envolvido no projeto final da disciplina. Dese
 
   3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 
     2, 4, 6 e 8 processadores.
+
+     Ao introduzir a diretiva critical em nossa solução, o comportamento do programa é alterado de modo que apenas uma thread será usada para executar o bloco de código protegido de cada vez. Isso elimina qualquer problema de concorrência que possa surgir.
 
      ![image](https://github.com/Cehiim/comp_paralela/assets/125515277/1e3b467a-c0b1-4d98-9d8f-309739dd2114)
 
