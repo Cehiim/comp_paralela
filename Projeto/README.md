@@ -9,7 +9,7 @@
 
 2- Abrir o repositório do projeto
 
-3- Executando o seguinte comando é possivel compilar a versão paralela: ***gcc -o proj ProjetoFinal.c -lpthread -lmpfr*** 
+3- Executando o seguinte comando é possivel compilar a versão paralela: `gcc -o proj ProjetoFinal.c -lpthread -lmpfr`
 
 4- Executando o seguinte comando é possivel compilar a versão critical: 
 
@@ -17,9 +17,9 @@
 
 1- O diretorio deve estar no local do executavel
 
-2- Para executar na versão serial, é utilizado o comando: ***time taskset -c 0 ./proj***
+2- Para executar na versão serial, é utilizado o comando: `time taskset -c 0 ./proj`
 
-3- Para executar na versão paralela, é utilizado o mesmo comando, porém com mais threads: ***time taskset -c 0-7 ./proj*** 
+3- Para executar na versão paralela, é utilizado o mesmo comando, porém com mais threads: `time taskset -c 0-7 ./proj`
 
 4- Para monitorar o tempo de execução de um programa sem interferir no seu funcionamento, usamos o comando time.
 
