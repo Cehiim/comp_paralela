@@ -40,7 +40,7 @@ Considere o problema da tartaruga envolvido no projeto final da disciplina. Dese
      Tempo de execução serial para 1, 2, 4, 6, 8 processadores:
      ![image](https://github.com/Cehiim/comp_paralela/assets/125515277/d46d3cba-14b6-4676-9052-c2de50543abd)
      
-     Tempo de execução paralela para 1, 2, 4, 6, 8 processadores:
+     Tempo de execução paralela para 1, 2, 4, 6, 8 processadores usando 8 threads:
      ![image](https://github.com/Cehiim/comp_paralela/assets/125515277/d2dcf9b7-ea96-442b-a4fd-b8fed6347ae7)
 
      ![image](https://github.com/Cehiim/comp_paralela/assets/125515277/939825a9-c14b-4a95-bdb3-150d8003f91a)
