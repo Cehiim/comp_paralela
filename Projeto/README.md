@@ -37,7 +37,13 @@ Considere o problema da tartaruga envolvido no projeto final da disciplina. Dese
 
   1. Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
 
-  2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
+     Tempo de execução serial para 1, 2, 4, 6, 8 processadores:
+     ![image](https://github.com/Cehiim/comp_paralela/assets/125515277/d46d3cba-14b6-4676-9052-c2de50543abd)
+     
+     Tempo de execução paralela para 1, 2, 4, 6, 8 processadores:
+     ![image](https://github.com/Cehiim/comp_paralela/assets/125515277/d2dcf9b7-ea96-442b-a4fd-b8fed6347ae7)
 
-  3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 
+  3. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
+
+  4. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 
     2, 4, 6 e 8 processadores.
