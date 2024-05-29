@@ -6,7 +6,7 @@
 
 #define N_CASA 100000
 int num_exec = 1000;
-int num_threads = 16;
+int num_threads = 8;
 mpfr_t result;
 int exec_por_thread = 0;
 sem_t semaforo;
@@ -38,9 +38,10 @@ void *threadexec(void* args) { // Função de execução para cada thread
     mpfr_div(div, um, fat, MPFR_RNDU); // Atribui a variável "div" o resultado da divisão de 1 pelo número do fatorial
     mpfr_add(temp, temp, div, MPFR_RNDU); // Atribui a variável "temp" a soma das divisões "div"
   }
-  sem_wait(&semaforo); //Semáforo da região crítica
-  mpfr_add(result, result, temp, MPFR_RNDU); // Atribui a variável "temp" o resultado das somas das divisões
-  sem_post(&semaforo);
+  // Região crítica: Semáforo permite a execução de apenas uma thread de cada vez
+  sem_wait(&semaforo); // O semáforo bloqueia as demais execuções caso uma thread já esteja incrementando o valor de "result"
+  mpfr_add(result, result, temp, MPFR_RNDU); // Atribui a variável "result" o resultado das somas das divisões
+  sem_post(&semaforo); // O semáforo libera após o término da incrementação do "result"
   mpfr_clear(temp); // Libera a memória alocada das variáveis
   mpfr_clear(fat);
   mpfr_clear(div);
@@ -51,7 +52,7 @@ void *threadexec(void* args) { // Função de execução para cada thread
 int main() {
   pthread_t threads[num_threads]; // Cria um vetor de threads
   exec_por_thread = num_exec/num_threads; // Define execuções por threads
-  sem_init(&semaforo, 0, 1); //inicia o semáforo
+  sem_init(&semaforo, 0, 1); // Inicia o semáforo
   mpfr_init2(result, N_CASA);
   mpfr_set_d(result, 0.0, MPFR_RNDU); // Define o valor de "result" para 0.0
     
@@ -64,6 +65,6 @@ int main() {
   mpfr_out_str(stdout, 10, 0, result, MPFR_RNDU); // Imprime o valor de "result" na saída padrão (stdout)
                                                   // '0' indica a saída sem formatação
   mpfr_clear(result);
-  sem_destroy(&semaforo); //finaliza o semáforo
+  sem_destroy(&semaforo); // Finaliza o semáforo
   return 0;
 }
