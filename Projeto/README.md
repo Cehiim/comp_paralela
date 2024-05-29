@@ -24,7 +24,11 @@
 4- Para monitorar o tempo de execução de um programa sem interferir no seu funcionamento, usamos o comando `time`.
 
 5- Além disso, utilizamos o comando `taskset -c 0` para especificar os núcleos da CPU que serão utilizados durante a execução. Esse comando pode ser ajustado conforme necessário, mas para esta atividade, adotamos a seguinte abordagem:
-
+- 1 processador = taskset -c 0
+- 2 processadores = taskset -c 0-1
+- 4 processadores = taskset -c 0-3
+- 6 processadores = taskset -c 0-5
+- 8 processadores = taskeset -c 0-7
 
 # Resultados
 
