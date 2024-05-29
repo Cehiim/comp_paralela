@@ -23,8 +23,8 @@
 
 4- Para monitorar o tempo de execução de um programa sem interferir no seu funcionamento, usamos o comando time.
 
-5- Além disso, utilizamos o comando taskset -c 0 para especificar os núcleos da CPU que serão utilizados durante a execução. Esse comando pode ser ajustado conforme necessário, mas para esta atividade, adotamos a seguinte abordagem:
-./proj
+5- Além disso, utilizamos o comando `taskset -c 0` para especificar os núcleos da CPU que serão utilizados durante a execução. Esse comando pode ser ajustado conforme necessário, mas para esta atividade, adotamos a seguinte abordagem:
+`./proj`
 
 # Como comprovar que os resultados propostos foram alcançados
 
