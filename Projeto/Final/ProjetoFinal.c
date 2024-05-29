@@ -4,7 +4,7 @@
 #include <mpfr.h> // Biblioteca de cálculo de precisão arbitrária
 
 #define N_CASA 100000
-int num_exec = 1000; // Número de execuções
+int num_exec = 100000; // Número de execuções
 int num_threads = 16; // Número de threads
 mpfr_t result;
 int exec_por_thread = 0; // (Definido no "main")
@@ -28,13 +28,12 @@ void *threadexec(void* args) { // Função de execução para cada thread
   int aux;
   mpfr_set_d(temp, 0.0, MPFR_RNDU); // Define o valor de "temp" para 0.0
   mpfr_set_d(um, 1.0, MPFR_RNDU); // Define o valor de "um" para 1.0
-  for (int i = 0; i < exec_por_thread; i ++) {
-    aux = ((i*num_threads) + thread_id); // Define o número que será calculado como fatorial para iteração
-                                         // "(i*num_threads)" é feito para distribuir o trabalho de cálculo do fatorial entre as threads
-                                         // "(... + thread_id)" garante que cada thread esteja calculando fatoriais de números diferentes
-    fatorial(aux, fat);
+  aux = thread_id*exec_por_thread;//Calcula o valor inicial
+  fatorial(aux, fat);//Calcula o valor para o fatorial inicial a ser realizado
+  for (int i = aux+1; i < aux+exec_por_thread; i ++) {
     mpfr_div(div, um, fat, MPFR_RNDU); // Atribui a variável "div" o resultado da divisão de 1 pelo número do fatorial
     mpfr_add(temp, temp, div, MPFR_RNDU); // Atribui a variável "temp" a soma das divisões "div"
+    mpfr_mul_ui(fat, fat, i, MPFR_RNDU);// Multiplica o fatorial inicial pelo valor de i todas as vezes com base no número de execuções
   }
   mpfr_add(result, result, temp, MPFR_RNDU); // Atribui a variável "result" o resultado das somas das divisões
   mpfr_clear(temp); // Libera a memória alocada das variáveis
